@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>psz-vs-isu-5th-match-pakistan-super-league-2022</title>
+</head>
+<body>
+    <h3>PAKISTAN SUPER LEAGUE</h3>
+<H5>Live</H5>
+<p id="msg" style="color:red;"></p>
+<b class="title" style="color:blue"></b> <br/>
+<b class="current" style="color:green"></b><br/><br/>
+<b class="bowler" style="color:red"></b>
+
+<br/><br/>
+<a href="https://iamrohit.in" target="_blank">iamrohit.in</a>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  $(function(){
+    // set cricbuzz.com live cricket score url.
+    let url = "https://www.cricbuzz.com/live-cricket-scores/41621/psz-vs-isu-5th-match-pakistan-super-league-2022";
+    getLiveScore(url);
+    setInterval(function(){ getLiveScore(url); }, 2000);
+    function getLiveScore(url) {
+      // $("#msg").html("Updating score..");
+      $.getJSON('https://cricket-api.vercel.app/cri.php?url='+url,function(data) {
+             console.log(data);
+         $(".title").html(data['livescore']['title']);       $(".current").html(data['livescore']['current']);
+        // $(".bowler").html(data['livescore']['bowler']);
+        $("#msg").html("");
+          });
+    }  
+  }); 
+</script>
+</body>
+</html>
