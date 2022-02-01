@@ -5,14 +5,22 @@
 
 
   <style>
-    .home {
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+    .home{
       box-sizing: border-box;
       display: flex;
       align-items: center;
       justify-content: center;
       border: 30px red;
       font-family: Arial, Helvetica, sans-serif;
+      margin-top: 500px;
 
+    }
+    *{
+      /* margin-top: 400px;
+      padding: 0; */
+      box-sizing: border-box;
     }
 
 
@@ -31,12 +39,13 @@
       align-items: center;
       justify-content: center;
       flex-direction: column;
-
+      border: 2px solid rgb(165, 164, 164); border-radius: 20px; padding: 16px;
+size: 200px;
     }
 
     .current {
       font-size: larger;
-      font-family: system-ui;
+      font-family:'Ubuntu', sans-serif;
     }
 
     .j {
@@ -59,14 +68,16 @@
 <body>
   <div class="cet">
     <p id="msg" style="color:red;"></p>
-    <b class="title" style="color:#e16161; font-family: system-ui;"></b> <br />
-    <b class="current" style="color:green; font-size: larger;
-      font-family: system-ui;"></b><br /><br />
+    <b class="title" style="color:#ffffff; font-family: system-ui; font-size: small;
+     display: flex; align-items: center; justify-content: center;
+      border: 2px solid #02862e; border-radius: 10px; padding: 16px; background-color: #02862e;"></b> <br />
+    <b class="current" style="color:#05770e; font-size: larger;
+      font-family:'Ubuntu', sans-serif;"></b><br /><br />
     <!-- <div class="j"><b class="batsman"  style="color: rgb(240, 62, 62);"></b><br/>
         <b  class="batsmantwo" style="color: rgb(116, 114, 114);"></b></div><p>Batter</p> -->
 
     <br />
-    <b class="update" style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif;"></b>
+    <b class="update" style="color: rgb(255, 255, 255); font-family: Arial, Helvetica, sans-serif;"></b>
 
 
     <br /><br />
@@ -76,7 +87,7 @@
   <script>
     $(function () {
       // set cricbuzz.com live cricket score url.
-      let url = "https://www.cricbuzz.com/live-cricket-scores/41631/qtg-vs-ms-7th-match-pakistan-super-league-2022";
+      let url = "https://www.cricbuzz.com/live-cricket-scores/41636/isu-vs-ms-8th-match-pakistan-super-league-2022";
       getLiveScore(url);
       setInterval(function () { getLiveScore(url); }, 2000);
       function getLiveScore(url) {
