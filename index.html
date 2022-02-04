@@ -88,6 +88,7 @@ size: 200px; */
       font-family: 'Ubuntu', sans-serif;;"></b><br /><br>
     <!-- <div class="j"><b class="batsman"  style="color: rgb(240, 62, 62);"></b><br/>
         <b  class="batsmantwo" style="color: rgb(116, 114, 114);"></b></div><p>Batter</p> -->
+<<<<<<< HEAD
 
     <span style="font-family:'Ubuntu', sans-serif;">Batters</span>
     <div class="batter">
@@ -135,3 +136,37 @@ size: 200px; */
 </body>
 
 </html>
+=======
+      
+        <br/>
+        <b  class="update" style="color: #EC7743; font-family: Arial, Helvetica, sans-serif; font-size: x-small;font-weight: 700; "></b>
+      
+
+     <br/><br/>
+      <a href="https://techbotinc.github.io/techbot/" target="_blank">TechBot Inc</a></div>  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  $(function(){
+    // set cricbuzz.com live cricket score url.
+    let url = "https://www.cricbuzz.com/live-cricket-scores/41646/qtg-vs-isu-10th-match-pakistan-super-league-2022";
+    getLiveScore(url);
+    setInterval(function(){ getLiveScore(url); }, 2000);
+    function getLiveScore(url) {
+      // $("#msg").html("Updating score..");
+      $.getJSON('https://cricket-api.vercel.app/cri.php?url='+url,function(data) {
+             console.log(data);
+         $(".title").html(data['livescore']['title']);       $(".current").html(data['livescore']['current']);
+         $(".batsman" ).html(data['livescore']['batsman']);  $(".batsmantwo").html(data['livescore']['batsmantwo']);
+         $(".update").html(data['livescore']['update']);
+        // $(".bowler").html(data['livescore']['bowler']);
+        $("#msg").html("");
+          });
+    }  
+  }); 
+</script>
+
+<!-- <h3>PAKISTAN SUPER LEAGUE</h3>
+      <H5>Live</H5> -->
+</body>
+</html>
+>>>>>>> f16bad01f751f9f8e68d94cecfb33ac07d4bdd47
