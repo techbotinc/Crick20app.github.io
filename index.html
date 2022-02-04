@@ -1,28 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 
   <style>
-
-    .home{
+    .home {
       box-sizing: border-box;
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 30px  red;
-      font-family:Arial, Helvetica, sans-serif;
+      border: 30px red;
+      font-family: Arial, Helvetica, sans-serif;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .batter {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+    }
+
+    * {
+      box-sizing: border-box;
+
 
     }
-    
-    
-    h5{
+
+    h5 {
       color: red;
     }
-    h3{
-      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    h3 {
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
       color: green;
     }
+
     .cet {
       display: flex;
       align-items: center;
@@ -32,65 +52,86 @@
       /* border: 2px solid rgb(165, 164, 164); border-radius: 20px; padding: 16px;
 size: 200px; */
     }
-    
-    .current{
+
+    .current {
       font-size: larger;
-    font-family: system-ui;
+      font-family: system-ui;
     }
-    .j{
+
+    .j {
       display: flex;
       flex-direction: row;
     }
-    a{
+
+    a {
       color: cornflowerblue;
       font-size: larger;
       font-family: monospace;
+      text-decoration: none;
     }
   </style>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crick20App TechBot</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crick20App TechBot</title>
 </head>
+
 <body>
-    <div class="cet">
-      <p id="msg" style="color:red;"></p>
-      <b class="title" style="color:#ffffff; font-family: system-ui; font-size: x-small; font-weight: 700;
+  <div class="cet">
+    <p id="msg" style="color:red;"></p>
+
+    <b class="title" style="color:#ffffff; font-family: system-ui; font-size:12px; font-weight: 750;
       display: flex; align-items: center; justify-content: center;
-       border: 2px solid #02862e;  padding: 14px; background-color: #02862e; width: 100%; overflow: hidden;"></b> <br/>
-      <b class="current" style="color:1ebec7; font-size: larger;
-      font-family: 'Ubuntu', sans-serif;;"></b><br/><br/>
-      <!-- <div class="j"><b class="batsman"  style="color: rgb(240, 62, 62);"></b><br/>
+       border: 2px solid #02862e;  padding: 14px; background-color: #02862e; width: 100%; overflow: hidden;"></b>
+    <br />
+    <b class="current" style="color:rgb(73, 73, 73); font-size: larger;
+      font-family: 'Ubuntu', sans-serif;;"></b><br /><br>
+    <!-- <div class="j"><b class="batsman"  style="color: rgb(240, 62, 62);"></b><br/>
         <b  class="batsmantwo" style="color: rgb(116, 114, 114);"></b></div><p>Batter</p> -->
-      
-        <br/>
-        <b  class="update" style="color: #EC7743; font-family: Arial, Helvetica, sans-serif; font-size: x-small;font-weight: 700; "></b>
-      
 
-     <br/><br/>
-      <a href="https://techbotinc.github.io/techbot/" target="_blank">TechBot Inc</a></div>  
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-  $(function(){
-    // set cricbuzz.com live cricket score url.
-    let url = "https://www.cricbuzz.com/live-cricket-scores/41636/isu-vs-ms-8th-match-pakistan-super-league-2022";
-    getLiveScore(url);
-    setInterval(function(){ getLiveScore(url); }, 2000);
-    function getLiveScore(url) {
-      // $("#msg").html("Updating score..");
-      $.getJSON('https://cricket-api.vercel.app/cri.php?url='+url,function(data) {
-             console.log(data);
-         $(".title").html(data['livescore']['title']);       $(".current").html(data['livescore']['current']);
-         $(".batsman" ).html(data['livescore']['batsman']);  $(".batsmantwo").html(data['livescore']['batsmantwo']);
-         $(".update").html(data['livescore']['update']);
-        // $(".bowler").html(data['livescore']['bowler']);
-        $("#msg").html("");
-          });
-    }  
-  }); 
-</script>
+    <span style="font-family:'Ubuntu', sans-serif;">Batters</span>
+    <div class="batter">
+      <p
+        style="color: #ff7b00; margin-right:10px; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+        <b class="batsman"></b> (<b class="batsmanrun"></b>)</p>
+      <p style="color: rgb(90, 90, 90);font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"" ><b class="
+        batsmantwo"></b> (<b class="batsmanrun"></b>)</p>
+      <!-- <div class="batsmanrun"></div> -->
 
-<!-- <h3>PAKISTAN SUPER LEAGUE</h3>
+    </div>
+    <b class="update"
+      style="color:red; font-family: Arial, Helvetica, sans-serif; font-size:small;font-weight: 700; "></b>
+    <br /><br />
+    <a href="https://techbotinc.github.io/techbot/" target="_blank">TechBot Inc</a>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(function () {
+      // set cricbuzz.com live cricket score url.
+      let url = "https://www.cricbuzz.com/live-cricket-scores/41651/krk-vs-psz-11th-match-pakistan-super-league-2022";
+      getLiveScore(url);
+      setInterval(function () { getLiveScore(url); }, 2000);
+      function getLiveScore(url) {
+        // $("#msg").html("Updating score..");
+        $.getJSON('https://cricket-api.vercel.app/cri.php?url=' + url, function (data) {
+          console.log(data);
+          $(".title").html(data['livescore']['title']); $(".current").html(data['livescore']['current']);
+          $(".batsman").html(data['livescore']['batsman']); $(".batsmantwo").html(data['livescore']);
+          $(".update").html(data['livescore']['update']);
+          //  Batsman And Runs
+          $(".batsman").html(data['livescore']['batsman']); $(".batsmanrun").html(data['livescore']['batsmanrun']);
+
+          $(".batsmantwo").html(data['livescore']['batsmantwo']); $(".batsmantworun").html(data['livescore']['batsmantworun']);
+
+          // $(".bowler").html(data['livescore']['bowler']);
+          $("#msg").html("");
+        });
+      }
+    }); 
+  </script>
+
+  <!-- <h3>PAKISTAN SUPER LEAGUE</h3>
       <H5>Live</H5> -->
 </body>
+
 </html>
