@@ -205,7 +205,7 @@ size: 200px; */
     <!-- <div class="j"><b class="batsman"  style="color: rgb(240, 62, 62);"></b><br/>
         <b  class="batsmantwo" style="color: rgb(116, 114, 114);"></b></div><p>Batter</p> -->
 
-    <span style="font-family:'Ubuntu', sans-serif;">Batters</span>
+    <span style="font-family:'Ubuntu', sans-serif; display: flex;">Batters</span>
     <div class="batter">
       <p
         style="color: #ff7b00; margin-right:10px; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
@@ -224,7 +224,7 @@ size: 200px; */
   <script>
     $(function () {
       // set cricbuzz.com live cricket score url.
-      let url = "https://cricbuzz.com/live-cricket-scores/41701/isu-vs-krk-21st-match-pakistan-super-league-2022";
+      let url = "https://www.cricbuzz.com/live-cricket-scores/41711/ms-vs-krk-23rd-match-pakistan-super-league-2022";
       getLiveScore(url);
       setInterval(function () { getLiveScore(url); }, 2000);
       function getLiveScore(url) {
@@ -238,7 +238,8 @@ size: 200px; */
           $(".batsman").html(data['livescore']['batsman']); $(".batsmanrun").html(data['livescore']['batsmanrun']);
 
           $(".batsmantwo").html(data['livescore']['batsmantwo']); $(".batsmantworun").html(data['livescore']['batsmantworun']);
-
+          $(".batsmantworun").html(data['livescore']['batsmantworun']);
+          
           // $(".bowler").html(data['livescore']['bowler']);
           $("#msg").html("");
         });
@@ -247,7 +248,8 @@ size: 200px; */
   </script>
 
 <!-- PRELOADER CARD -->
-
+<!-- <div class="mazzobandreya">mazzobandreya</div>
+<div class="kuttinepura">Gandu</div> -->
 <div class="card">
   <div class="header">
     <div class="img"></div>
